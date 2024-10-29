@@ -2,26 +2,30 @@ using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.UI;
 
+
 public class UIController : NetworkBehaviour {
   
 
     [SerializeField] private GameObject CreateSession;
     [SerializeField] private GameObject JoinSession;
+    private NetworkVariable<bool> hideUI = new NetworkVariable<bool>(true);
 
     public override void OnNetworkSpawn() 
     {
-      if(IsClient && IsOwner) { //Check if this is the local player instance
-        HideLobbyUIClientRpc();
-      }
-    }
+      Debug.Log(hideUI.Value);
 
-    [ClientRpc]//Run only for client who owns this instance
-    private void HideLobbyUIClientRpc(ClientRpcParams clientRpcParams = default) 
-    {
-      if(IsOwner) {
-        CreateSession.SetActive(false);
-        JoinSession.SetActive(false);
+      CreateSession.SetActive(false);
+      JoinSession.SetActive(false);
+
+      if(IsClient && IsOwner) { //Check if this is the local player instance
+        if(hideUI.Value) {
+          CreateSession.SetActive(false);
+          JoinSession.SetActive(false);
+        } else {
+          hideUI.Value = false;
+        }
       }
+
     }
 
 }
