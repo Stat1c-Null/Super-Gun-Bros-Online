@@ -12,8 +12,6 @@ public class UIController : NetworkBehaviour {
 
     public override void OnNetworkSpawn() 
     {
-      Debug.Log(hideUI.Value);
-
       CreateSession.SetActive(false);
       JoinSession.SetActive(false);
 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6154574851699063528}
   - component: {fileID: 3476011727528631321}
+  - component: {fileID: 831888149140525502}
   m_Layer: 5
   m_Name: Gun
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 365572154856466497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.522, y: -0.093, z: -1}
+  m_LocalPosition: {x: 0.5, y: -0.1, z: -1}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,6 +88,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &831888149140525502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365572154856466497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6dd2fc52adcccf48b85405859d19fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 478164499149709580, guid: eff54c4333ca82a4e8fd9a1a7c2787a3, type: 3}
 --- !u!1 &1881686722410699419
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1891315908
+  GlobalObjectIdHash: 2408026568
   InScenePlacedSourceGlobalObjectIdHash: 3193243319
   DeferredDespawnTick: 0
   Ownership: 1
@@ -226,6 +240,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  gun: {fileID: 365572154856466497}
 --- !u!114 &2639684015656408544
 MonoBehaviour:
   m_ObjectHideFlags: 0

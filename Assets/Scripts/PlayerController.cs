@@ -12,6 +12,8 @@ public class PlayerController : NetworkBehaviour {
 
   public Transform feet;
   public LayerMask groundLayer;
+
+  public GameObject gun;
   
 
   private void Start() {
@@ -24,6 +26,15 @@ public class PlayerController : NetworkBehaviour {
     if (!IsOwner) return;
 
     mx = Input.GetAxisRaw("Horizontal");
+
+    //Rotate Player
+    if(mx > 0) {
+      gun.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+      gun.transform.localPosition = new Vector3(0.5f, -0.1f, -1f);
+    } else if(mx < 0){
+      gun.transform.localScale = new Vector3(-0.6f, 0.6f, 0.6f);
+      gun.transform.localPosition = new Vector3(-0.5f, -0.1f, -1f);
+    }
 
     if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W)) && IsGrounded())
     {
