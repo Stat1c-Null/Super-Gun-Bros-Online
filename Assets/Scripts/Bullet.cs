@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.Networking;
+using Unity.Netcode;
 
-public class Bullet : MonoBehaviour
-{
+public class Bullet : NetworkBehaviour {
     [SerializeField] private float speed;
     Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

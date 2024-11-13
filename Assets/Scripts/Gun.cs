@@ -1,8 +1,10 @@
 using UnityEngine;
+using Unity.Netcode;
+using UnityEngine.Networking;
 
-public class Gun : MonoBehaviour
-{
 
+public class Gun : NetworkBehaviour {
+    
     public GameObject Bullet;
     private int bulletCount;
     [SerializeField] private int maxAmmo;
@@ -25,8 +27,10 @@ public class Gun : MonoBehaviour
             bulletRotation = 1f;
         }
 
-        if(Input.GetMouseButtonDown(0)) {
-            Instantiate(Bullet, new Vector3(transform.position.x + rotationX, transform.position.y + 0.15f, transform.position.z), transform.rotation);
+        if(Input.GetMouseButtonDown(1)) {
+            var bullet = Instantiate(Bullet, new Vector3(transform.position.x + rotationX, transform.position.y + 0.15f, transform.position.z), transform.rotation);
+            var bulletNetworkObject = bullet.GetComponent<NetworkObject>();
+            bulletNetworkObject.Spawn();
         }   
     }
 }
