@@ -101,8 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6dd2fc52adcccf48b85405859d19fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   Bullet: {fileID: 478164499149709580, guid: eff54c4333ca82a4e8fd9a1a7c2787a3, type: 3}
   maxAmmo: 0
+  NetworkManager: {fileID: 0}
 --- !u!114 &6133882576834413334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1591273072
+  GlobalObjectIdHash: 462810661
   InScenePlacedSourceGlobalObjectIdHash: 3193243319
   DeferredDespawnTick: 0
   Ownership: 1
