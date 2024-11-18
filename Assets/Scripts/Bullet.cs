@@ -14,6 +14,10 @@ public class Bullet : NetworkBehaviour {
         if(IsServer) {
             StartCoroutine(DespawnBullet());
         }
+
+        if(transform.rotation.y > 0) {
+            speed = -speed;
+        }
     }
 
     private IEnumerator DespawnBullet() {
@@ -28,14 +32,11 @@ public class Bullet : NetworkBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z);
-        //Vector2 shooting = new Vector2(speed, rb.linearVelocity.y);
-        //rb.linearVelocity = shooting;
-        Vector3 movement = direction * speed * Time.deltaTime;
-        transform.Translate(movement);
+        Vector2 shooting = new Vector2(speed, rb.linearVelocity.y);
+        rb.linearVelocity = shooting;
     }
 
-    private void OnCollisionEnter(Collision other) {
+    private void OnCollisionEnter2D(Collision2D other) {
         if(IsServer) {
             GetComponent<NetworkObject>().Despawn();
         }    
