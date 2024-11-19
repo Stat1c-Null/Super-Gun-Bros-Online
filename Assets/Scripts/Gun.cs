@@ -22,10 +22,8 @@ public class Gun : NetworkBehaviour {
     {
         if(transform.localScale.x < 0f) {
             rotationX = -0.3f;
-            bulletRotation = -1f;
         } else {
             rotationX = 0.3f;
-            bulletRotation = 1f;
         }
         
         //Check if player is shooting from their client window, and don't invoke other players to shoot

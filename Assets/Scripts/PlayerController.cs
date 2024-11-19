@@ -19,6 +19,10 @@ public class PlayerController : NetworkBehaviour {
   private void Start() {
     _transform = GetComponent<ClientNetworkTransform>();
     rb = GetComponent<Rigidbody2D>();
+    SpriteRenderer renderer = rb.GetComponent<SpriteRenderer>();
+    //Select random color for player when starting the game
+    Color randomColor = new Color(Random.Range(0f,1f), Random.Range(0f,1f), Random.Range(0f,1f), 1f);
+    renderer.color = randomColor;
   }
 
 

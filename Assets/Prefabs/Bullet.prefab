@@ -131,6 +131,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   speed: 40
   lifeTime: 7
+  knockbackForce: 10
 --- !u!58 &2481557031633445338
 CircleCollider2D:
   m_ObjectHideFlags: 0
